@@ -4,7 +4,7 @@ Course: Development of Mobile Applications (DAM)
 
 ## Description
 
-Android Project using Java. This is an example of how to apply the MVC pattern using observers.
+Android Project using Java. This is an example of how to apply the MVC pattern using observers and MVP.
 
 ## Requirements
 * Age App (Course sample Android App).
@@ -15,11 +15,7 @@ Android Project using Java. This is an example of how to apply the MVC pattern u
 ## Code Structure:
 
 ### Master branch
-* Model: A class that represents a user with a name (string) and a birthday (date). This will be the observable object. It will notify changes in its attributes (name and birthday) to the observers.
-* Controller: MainActivity will act as the controller which registers the observers and define the model to observe.
-* View: MainActivity will also act as the view.
+* Model-View-Controller using observer pattern.
 
-### Using controller
-* Model: A class that represents a user with a name (string) and a birthday (date). This will be the observable object. It will notify changes in its attributes (name and birthday) to the observers.
-* Controller: UserController interacts with UserModel
-* View: MainActivity act as the view and interacts only with the user inputs and is controlled by UserController.
+### MVP branch
+* Model-View-Presenter
