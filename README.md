@@ -11,14 +11,7 @@
 *Course*: [Grau en Tècniques d'Interacció Digital i de Computació](http://www.grauinteraccioicomputacio.udl.cat/ca/index.html)
 
 ## Description
-
 Android Project using Java. This is an example of how to apply the MVC pattern using observers and MVP.
-
-## Requirements
-* Age App (Course sample Android App).
-
-## New stuff
-* DatePicker widget: We update the year,month,day birthday form to a Widget a DatePicker. 
 
 ## Code Structure:
 
