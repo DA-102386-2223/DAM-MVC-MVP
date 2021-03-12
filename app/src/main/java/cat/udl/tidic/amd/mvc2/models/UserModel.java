@@ -50,20 +50,6 @@ public class UserModel extends Observable {
         int d1 = Integer.parseInt(formatter.format(this.birthday));
         int d2 = Integer.parseInt(formatter.format(new Date()));
         return (d2 - d1) / 10000;
-
-        // JAVA 8
-        //  return Period.between(birthDate, currentDate).getYears();
-
-        // Using Joda-Time
-
-        // <dependency>
-        //  <groupId>joda-time</groupId>
-        //  <artifactId>joda-time</artifactId>
-        //  <version>2.10</version>
-        //</dependency>
-
-        // Years age = Years.yearsBetween(birthDate, currentDate);
-
     }
 
 
