@@ -1,18 +1,23 @@
-# DAM-MVC-Active 
+# DAM-MVC-MVP
 
-Course: Development of Mobile Applications (DAM)
+## About
+
+<img align="left" width="100" height="100" src="https://user-images.githubusercontent.com/61190134/76793662-b6b8bd00-67c5-11ea-83b2-efcc9ed462fc.png">
+
+*Instructor*: [Jordi Mateo Fornés](http:jordimateofornes.com)
+
+*Subject*: Development of Mobile Applications (DAM)
+
+*Course*: [Grau en Tècniques d'Interacció Digital i de Computació](http://www.grauinteraccioicomputacio.udl.cat/ca/index.html)
 
 ## Description
+Android Project using Java. This is an example of how to apply the MVC pattern using observers and MVP.
 
-Android Project using Java. This is an example of how to apply the MVC pattern using observers.
-
-## Requirements
-* Age App (Course sample Android App).
-
-## New stuff
-* DatePicker widget: We update the year,month,day birthday form to a Widget a DatePicker. 
 
 ## Code Structure:
-* Model: A class that represents a user with a name (string) and a birthday (date). This will be the observable object. It will notify changes in its attributes (name and birthday) to the observers.
-* Controller: MainActivity will act as the controller which registers the observers and define the model to observe.
-* View: MainActivity will also act as the view.
+
+### Master branch
+* Model-View-Controller using observer pattern.
+
+### MVP branch
+* Model-View-Presenter
