@@ -14,20 +14,16 @@ import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
 
-import cat.udl.tidic.amd.mvc2.controllers.MainActivityController;
 import cat.udl.tidic.amd.mvc2.models.UserModel;
-import cat.udl.tidic.amd.mvc2.views.MainView;
 
-public class MainActivity extends AppCompatActivity implements Observer, MainView {
-
+public class MainActivity extends AppCompatActivity implements Observer {
 
     private TextView bioTextView;
     private EditText fullNameEditText;
     private DatePicker birthdayDatePicker;
 
-
     private UserModel model = new UserModel();
-    private MainActivityController controller;
+//    private MainActivityController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +31,8 @@ public class MainActivity extends AppCompatActivity implements Observer, MainVie
         setContentView(R.layout.activity_main);
 
         Log.d("MainActivity", "Starting onCreate() method");
-        controller = new MainActivityController(model);
-        controller.bind(this);
+//        controller = new MainActivityController(model);
+//        controller.bind(this);
 
         bioTextView = findViewById(R.id.textView_bio);
         fullNameEditText = findViewById(R.id.editText_fullName);
@@ -61,11 +57,12 @@ public class MainActivity extends AppCompatActivity implements Observer, MainVie
         String TAG = "MVCLog";
         Log.d(TAG,"Observer notifies changes..., so let's update the user bio with the new information about the user.");
         bioTextView.setText(model.toString());
-
     }
 
     public void updateButtonOnClick(View v){
-        controller.onUpdateButtonClicked();
+//        controller.onUpdateButtonClicked();
+        model.setFullName(this.getUsername());
+        model.setBirthday(this.getBirthday());
     }
 
     public void resetButtonOnClick(View v){
@@ -73,19 +70,17 @@ public class MainActivity extends AppCompatActivity implements Observer, MainVie
         Calendar c = Calendar.getInstance();
         birthdayDatePicker.updateDate(c.get(Calendar.YEAR),c.get(Calendar.MONTH),
                 c.get(Calendar.DAY_OF_MONTH));
-        controller.onUpdateButtonClicked();
+        this.updateButtonOnClick(v);
     }
 
     public void clearNameEditTextOnClick(View v){
         fullNameEditText.setText("");
     }
 
-    @Override
     public String getUsername() {
         return fullNameEditText.getText().toString();
     }
 
-    @Override
     public Date getBirthday() {
         Calendar c = Calendar.getInstance();
         c.set(birthdayDatePicker.getYear(), birthdayDatePicker.getMonth(),
